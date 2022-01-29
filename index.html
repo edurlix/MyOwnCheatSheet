@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My own Cheat Sheet</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <h1>HTML Tables</h1>
+        <section class="creating">
+            <h2>Creating Table</h2>
+            <p>before displaying data, we must first create the table that will contain the data by using table <span>&lt table &gt;</span>
+            </p>
+            <article>
+                &lt; table &gt;
+                <br><br>
+                &lt; /table &gt;
+            </article>
+        </section>
+        <section class="table-rows">
+            <h2>Table Rows</h2>
+            <p>the table is already predefined for you, meaning that it contains the rows, columns, and cells that will hold data. In HTML, all of these components must be created. the first step in entering data into the table is to add rows using the table row element: <span>&lt; tr &gt;</span></p>
+            <article>
+                &lt; table &gt;
+                <br><br>
+                &lt; tr &gt;
+                <br><br>
+                &lt; /tr &gt;
+                <br><br>
+                &lt; tr &gt;
+                <br><br>
+                &lt; /tr &gt;
+                <br><br>
+                &lt; /table &gt;
+            </article>
+        </section>
+        <section class="table-data">
+            <h2>Table Data</h2>
+            <p>Rows aren't sufficient to add data to a table. Each cell element must also be defined. In HTML you can add data using the table data element: <span> &lt; td &gt;</span></p>
+            <article>
+                <p>&lt; table &gt;</p>
+                <p>&lt; tr &gt;</p>
+                <p>&lt; td &gt; 81 &lt; /td &gt;</p>
+                <p>&lt; td &gt; 73 &lt; /td &gt;</p>
+                <p>&lt; /tr &gt;</p>
+                <p>&lt; /table &gt;</p>
+                <aside>
+                    <table border="1">
+                        <tr>
+                            <td>81</td>
+                            <td>73</td>
+                        </tr>
+                    </table>
+                </aside>
+            </article>
+        </section>
+        <section class="table-heading">
+            <h2>Table Headings</h2>
+            <p>to add titles to rows and columns, you can use the table headind element: <span>&lt; th &gt;</span></p>
+            <p>the table heading element is used just like a table data element, except with a relevant title just like table data, a table heading must be placed within a table row.</p>
+            <article>
+                <p>&lt; table &gt;</p>
+                <p>&lt; tr &gt;</p>
+                <p>&lt; th &gt; &lt; /th &gt;</p>
+                <p>&lt; th scope="col"&gt; Saturday &lt; /th &gt;</p>
+                <p>&lt; th scope="col"&gt; Sunday &lt; /th &gt;</p>
+                <p>&lt; /tr &gt;</p>
+                <p>&lt; tr &gt;</p>
+                <p>&lt; th scope="row"&gt; Temperature&lt; /th &gt;</p>
+                <p>&lt; td &gt; 73 &lt; /td &gt;</p>
+                <p>&lt; td &gt; 81 &lt; /td &gt;</p>
+                <p>&lt; /tr &gt;</p>
+                <p>&lt; /table &gt;</p>
+                <aside>
+                    <table border="1">
+                        <tr>
+                            <th></th>
+                            <th scope="col">Saturday</th>
+                            <th scope="col">Sunday</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">Temperature</th>
+                            <td>73</td>
+                            <td>81</td>
+                        </tr>
+                    </table>
+                </aside>
+            </article>
+        </section>
+        <section class="table-borders">
+            <h2>Table Borders</h2>
+            <p>the tables you've created have been a little difficult to read because they have no borders. In order versions of HTML, a border, could be added to a table using the border attribute and setting it equal to an integer. This integer would represent the thickness of the better.</p>
+            <article>
+                <p>&lt;table border ="1"&gt;</p>
+                <p>&lt; tr &gt;</p>
+                <p>&lt; td &gt; 73 &lt; /td &gt;</p>
+                <p>&lt; td &gt; 81 &lt; /td &gt;</p>
+                <p>&lt; /tr &gt;</p>
+                <p>&lt; /table &gt;</p>
+                <aside>
+                    <table border="1">
+                        <tr>
+                            <td>73</td>
+                            <td>81</td>
+                        </tr>
+                    </table>
+                </aside>
+                <p>other way to add border to a table is using css to style html document</p>
+                <p>table,td { </p>
+                <p>&nbsp;&nbsp border: 1px solid black;</p>
+                <p>}</p>   
+            </article>
+        </section>
+        <section class="spanning-columns">
+            <h2>Spanning Columns</h2>
+            <p>what if the table contain data that spans multiple columns?</p>
+            <p>data can span columns using the <span>colspan</span> attribute. the attribute accepts an integer (greater than or equal to 1) to denote the number of columns it spans accross</p>
+            <article>
+                <p>&lt; table &gt;</p>
+                <p>&lt; tr &gt;</p>
+                <p>&lt; th &gt; Monday &lt; /th &gt;</p>
+                <p>&lt; th &gt; Tuesday &lt; /th &gt;</p>
+                <p>&lt; th &gt; Wednesday &lt; /th &gt;</p>
+                <p>&lt; /tr &gt;</p>
+                <p>&lt; tr &gt;</p>
+                <p>&lt;td colspan="2"&gt; Out of Town &lt; /td &gt;</p>
+                <p>&lt;td &gt; Back in Town &lt; /td &gt;</p>
+                <p>&lt;/tr&gt;</p>
+                <p>&lt; /table &gt;</p>
+                <aside>
+                    <table border="1">
+                        <tr>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Out of Town</td>
+                            <td>Back in Town</td>
+                        </tr>
+                    </table>
+                </aside>
+            </article>
+        </section>
+        <section class="spanning-rows">
+            <h2>Spanning Rows</h2>
+            <p>Data can also span multiple rows using the <span>rowspan</span> attribute</p>
+            <article>
+                <p>&lt; table &gt;</p>
+                <p>&nbsp&nbsp&lt; tr &gt;</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&lt; th &gt;&lt; /th &gt;</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&lt; th &gt; Saturday &lt; /th &gt;</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&lt; th &gt; Sunday &lt; /th &gt;</p>
+                <p>&nbsp&nbsp&lt; /tr &gt;</p>
+                <p>&nbsp&nbsp&lt; tr &gt;</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&lt; th &gt; Morning &lt; /th &gt;</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&lt; td rowspan="2"&gt; Work &lt; /td &gt;</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&lt; td rowspan="3"&gt; Relax &lt; /td &gt;</p>
+                <p>&nbsp&nbsp&lt; /tr &gt;</p>
+                <p>&nbsp&nbsp&lt; tr &gt;</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&lt; th &gt; Afternoon &lt; /th &gt;</p>
+                <p>&nbsp&nbsp&lt; /tr &gt;</p>
+                <p>&nbsp&nbsp&lt; tr &gt;</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&lt; th &gt; Evening &lt; /th &gt;</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&lt; td&gt; Dinner &lt; /td &gt;</p>
+                <p>&nbsp&nbsp&lt; /tr &gt;</p>
+                <p>&lt; /table &gt;</p>
+                <aside>
+                    <table border="1">
+                        <tr>
+                            <th></th>
+                            <th>Saturday</th>
+                            <th>Sunday</th>
+                        </tr>
+                        <tr>
+                            <th>Morning</th>
+                            <td rowspan="2">Work</td>
+                            <td rowspan="3">Relax</td>
+                        </tr>
+                        <tr>
+                            <th>Afternoon</th>
+                        </tr>
+                        <tr>
+                            <th>Evening</th>
+                            <td>Dinner</td>
+                        </tr>
+                    </table>
+                </aside>
+            </article>
+        </section>
+        <section class="table-body">
+            <h2>Table Body</h2>
+            <p>A table can grow to contain a lot of data and become very long, when this happens, the table can be sectioned off so that it is easier to manage. Long tables can be secitoned off using the table body element: <span>&lt;tbody&gt;</span>.</p>
+            <p>the <span>&lt;tbody&gt;</span> element should contain all of the table's data, excluding the table headings</p>
+            <article>
+                <p>&lt; table &gt;</p>
+                <p>&nbsp&nbsp&lt; tbody &gt;</p>
+                <p>&nbsp&nbsp&nbsp&lt; tr &gt;</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&lt; th &gt;&lt; /th &gt;</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&lt; th &gt; Saturday &lt; /th &gt;</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&lt; th &gt; Sunday &lt; /th &gt;</p>
+                <p>&nbsp&nbsp&nbsp&lt; /tr &gt;</p>
+                <p>&nbsp&nbsp&nbsp&lt; tr &gt;</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&lt; th &gt; Morning &lt; /th &gt;</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&lt; td rowspan="2"&gt; Work &lt; /td &gt;</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&lt; td rowspan="3"&gt; Relax &lt; /td &gt;</p>
+                <p>&nbsp&nbsp&nbsp&lt; /tr &gt;</p>
+                <p>&nbsp&nbsp&nbsp&lt; tr &gt;</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&lt; th &gt; Afternoon &lt; /th &gt;</p>
+                <p>&nbsp&nbsp&nbsp&lt; /tr &gt;</p>
+                <p>&nbsp&nbsp&nbsp&lt; tr &gt;</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&lt; th &gt; Evening &lt; /th &gt;</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&lt; td&gt; Dinner &lt; /td &gt;</p>
+                <p>&nbsp&nbsp&nbsp&lt; /tr &gt;</p>
+                <p>&nbsp&nbsp&lt; tbody &gt;</p>
+                <p>&lt; /table &gt;</p>
+                <aside>
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <th></th>
+                                <th>Saturday</th>
+                                <th>Sunday</th>
+                            </tr>
+                            <tr>
+                                <th>Morning</th>
+                                <td rowspan="2">Work</td>
+                                <td rowspan="3">Relax</td>
+                            </tr>
+                            <tr>
+                                <th>Afternoon</th>
+                            </tr>
+                            <tr>
+                                <th>Evening</th>
+                                <td>Dinner</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </aside>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
